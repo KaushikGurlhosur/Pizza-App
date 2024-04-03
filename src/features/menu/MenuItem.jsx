@@ -5,9 +5,12 @@ import Button from "../../ui/Button";
 import { formatCurrency } from "../../utils/helpers";
 import { addItem, getCurrentQuantityById } from "../cart/cartSlice";
 import DeleteItem from "../cart/DeleteItem";
+import UpdateItemQuantity from "../cart/UpdateItemQuantity";
 
 function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
+
+  const unitPriceUpdate = unitPrice * 20;
   // const [data, setData] = useState({});
   // console.log(pizza);
   // const newOrder = {
@@ -27,7 +30,7 @@ function MenuItem({ pizza }) {
       name,
       quantity: 1,
       unitPrice,
-      totalPrice: unitPrice * 1,
+      totalPrice: unitPriceUpdate * 1,
     };
     dispatch(addItem(newItem));
     // console.log(newItem);
@@ -49,14 +52,22 @@ function MenuItem({ pizza }) {
         </p>
         <div className="mt-auto flex items-center justify-between">
           {!soldOut ? (
-            <p className="text-sm">{formatCurrency(unitPrice)}</p>
+            <p className="text-sm">{formatCurrency(unitPriceUpdate)}</p>
           ) : (
             <p className="text-sm uppercase font-medium text-stone-500">
               Sold out
             </p>
           )}
 
-          {isInCart && <DeleteItem pizzaId={id} />}
+          {isInCart && (
+            <div className="flex items-center gap-3 sm:gap-8">
+              <DeleteItem pizzaId={id} />
+              <UpdateItemQuantity
+                pizzaId={id}
+                currentQuantity={currentQuantity}
+              />
+            </div>
+          )}
           {!soldOut && !isInCart && (
             <Button type="small" onClick={handleAddToCart}>
               Add to cart
