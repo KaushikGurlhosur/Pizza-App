@@ -10,7 +10,7 @@ function Button({ children, disabled, to, type, onClick }) {
     small: base + " py-2 px-4 md:px-5 md:py-2.5 text-xs ",
     secondary:
       " inline-block disabled:cursor-not-allowed text-sm rounded-full border-2 border-stone-300 font-semibold uppercase tracking-wide text-stone-800 outline-none transition-colors duration-300 hover:bg-cyan-300 focus:ring focus:ring-cyan-500 focus:ring-offset-2 active:bg-rose-200 px-4 py-2.5 md:px-6 md:py-3.5 ",
-    round: base + " py-2.5 px-1 md:px-3.5 md:py-2 text-xs ",
+    round: base + " py-0.5 px-1.5 md:px-3.5 md:py-2 text-xs ",
   };
 
   if (to)
