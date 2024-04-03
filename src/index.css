@@ -11,6 +11,7 @@
     width: 45px;
     aspect-ratio: 0.75;
     --c: no-repeat linear-gradient(theme(colors.violet.800) 0 0);
+
     background:
       var(--c) 0% 50%,
       var(--c) 50% 50%,

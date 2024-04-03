@@ -12,8 +12,8 @@ function CartItem({ item }) {
   const currentQuantity = useSelector(getCurrentQuantityById(pizzaId));
 
   return (
-    <li className="py-3 sm:flex items-center justify-between">
-      <p className="mb-1 sm:mb-0">
+    <li className="py-3 sm:flex items-center hover:scale-90 duration-300 justify-between">
+      <p className="mb-1 sm:mb-0 hover:scale-125 duration-300">
         {quantity}&times; {name}
       </p>
       <div className=" flex items-center justify-between sm:gap-6">

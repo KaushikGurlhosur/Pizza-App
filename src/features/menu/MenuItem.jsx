@@ -37,13 +37,13 @@ function MenuItem({ pizza }) {
   }
 
   return (
-    <li className="flex gap-4 py-2 ">
+    <li className="flex gap-4 py-2 hover:scale-90 duration-300  ">
       <img
         src={imageUrl}
         alt={name}
         // height={200}
         // width={200}
-        className={`h-24 w-24 rounded-xl ${soldOut ? "opacity-80 grayscale" : ""}`}
+        className={`h-24 w-24 hover:scale-125 duration-300  rounded-xl ${soldOut ? "opacity-80 grayscale" : ""}`}
       />
       <div className="flex flex-col grow pt-0.5">
         <p className="font-medium">{name}</p>
